@@ -1,0 +1,43 @@
+body {
+	font:15px/1.5 Arial, Helvetica,sans-serif;
+	padding: 0px;
+	background-color:#f4f3f3;
+    }
+
+.container {
+	width:100%;
+	overflow: hidden;
+	margin: auto;
+    }
+
+header {
+	background:#008B8B;#191970;
+	border-bottom:#448AFF 3px solid;
+	height:120px;
+	width:100%;
+	padding-top:30px;
+	align:left;
+	font-color:#191970;
+    }
+
+header h2 {
+	text-align:center;
+	color:#fff;
+    }
+
+.btn-info {
+    background-color: #48D1CC;
+    height:40px;
+	width:100px;
+	}
+
+.btn-info:hover {
+    background: #0b7dda;
+    }
+
+.results {
+	border-radius: 15px 50px;
+    padding: 20px;
+    width: 200px;
+    height: 150px;
+    }
