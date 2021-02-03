@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spam SMS Prediction</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h2>SMS Spam detection</h2>
+        </div>
+    </header>
+    <div class="ml-container">
+         <form action="{{ url_for('train')}}" method="POST">
+             <input type="submit" class="btn-info" value="train">
+             <h2>{{predictionText}}</h2>
+        </form>
+        <form action="{{ url_for('predict')}}" method="POST">
+            <p>Enter Your Message Here</p>
+            <textarea name="sms" rows="6" cols="50">
+            </textarea>
+            <br/>
+            <input type="submit" class="btn-info" value="predict">
+        </form>
+    </div>
+    <div class="results">
+    {% if prediction == 1%}
+	<h2 style="color:red;">Spam</h2>
+	{% elif prediction == 0%}
+	<h2 style="color:blue;">Not a Spam (It is a Ham)</h2>
+	{% endif %}
+    </div>
+</body>
+</html>
+<style media="screen">
+    body {
+	font:15px/1.5 Arial, Helvetica,sans-serif;
+	padding: 0px;
+	background-color:#f4f3f3;
+    }
+
+.container {
+	width:100%;
+	overflow: hidden;
+	margin: auto;
+    }
+
+header {
+	background:#008B8B;#191970;
+	border-bottom:#448AFF 3px solid;
+	height:120px;
+	width:100%;
+	padding-top:30px;
+	align:left;
+	font-color:#191970;
+    }
+
+header h2 {
+	text-align:center;
+	color:#fff;
+    }
+
+.btn-info {
+    background-color: #48D1CC;
+    height:40px;
+	width:100px;
+	}
+
+.btn-info:hover {
+    background: #0b7dda;
+    }
+
+.results {
+	border-radius: 15px 50px;
+    padding: 20px;
+    width: 200px;
+    height: 150px;
+    }
+</style>
